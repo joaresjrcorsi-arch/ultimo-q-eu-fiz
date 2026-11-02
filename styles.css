@@ -1,0 +1,172 @@
+/* 4 */
+h1 {
+    font-size: 30px;
+    text-transform: uppercase;
+}
+
+/* 5 */
+p::first-letter {
+    text-transform: uppercase;
+}
+
+/* 6 */
+a:hover {
+    text-decoration: none;
+}
+
+/* 7 */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    text-align: center;
+}
+
+/* CT 3, 4 e 5 */
+#primary-list {
+    list-style: none;
+    text-align: center;
+}
+
+/* CT 4 */
+img {
+    display: block;
+    margin: auto;
+    max-width: 150px;
+}
+
+/* Navegacao */
+.nav {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+/* PD 1 */
+.banner {
+    height: 300px;
+    width: 300px;
+    background-image: url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTvmULAwXAMY8OdQqpgrXZxUZC1BD6o1E7Y1WFG_jLHtg&s=10");
+    background-repeat: no-repeat;
+}
+
+/* PD 2 */
+.hide {
+    display: none;
+}
+
+/* ALL 1 */
+body {
+    padding: 20px;
+    margin: 20px;
+    background-color: white;
+}
+
+/* ALL 2 */
+.header {
+    position: relative;
+    padding: 10px;
+    background-color: rgb(190, 185, 105);
+    width: auto;
+}
+
+.header .nav {
+    text-align: center;
+}
+
+.header .nav li {
+    display: inline-block;
+    margin-right: 10px;
+}
+
+/* CT-TVS 2 */
+.products-list {
+    list-style: none;
+    display: grid;
+    padding: 20px;
+    gap: 10px 20px;
+    grid-auto-flow: row;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
+
+    /* CT-TVS 3 */
+    justify-items: center;
+    align-items: stretch;
+    align-content: center;
+
+    /* CT-TVS 4 */
+    grid-template-areas:
+        "product3 product1"
+        "product2 .";
+}
+
+/* Itens do Grid */
+.product {
+    border: 1px solid #ccc;
+    padding: 10px;
+    text-align: center;
+}
+
+/* CT-TVS 4 */
+.product-1 {
+    grid-area: product1;
+}
+
+.product-2 {
+    grid-area: product2;
+}
+
+.product-3 {
+    grid-area: product3;
+}
+/* CT-TVS 1 */
+.product {
+    border: 1px solid #1f0101;
+    padding: 10px;
+    text-align: center;
+}
+
+/* CT 4 - Imagens responsivas */
+.product img {
+    max-width: 100%;
+    max-height: 150px;
+}
+
+/* all 1 */
+@media print {
+    .header,
+    .footer {
+        display: none;
+    }
+}
+
+/* all 2 */
+.footer {
+
+  padding: 20px;
+  background-color: aquamarine;
+
+}
+/* TABLET  */
+
+@media (max-width: 1024px) {
+    .products-list {
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: auto;
+        grid-template-areas:
+            "product1 product2";
+    }
+}
+/* celular */
+@media (max-width: 768px) {
+    .products-list {
+        grid-template-columns: 1fr;
+        grid-template-rows: auto;
+        grid-template-areas:
+            "product1"
+            "product2"
+            "product3";
+    }
+}
